@@ -74,7 +74,7 @@ When the Microgateway validates the API Key, it sends the request to Apigee Edge
 ### Cache Headers
 The apikeys plugin observes the [`cache-control`](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching) header.  If a client application wants to cache the JWT, which is returned after the API Key is validated, then send the `cache-control` header set to any value except `no-cache`.  This will only cache the API Key and JWT associated with the request.  Other requests to the Microgateway will not be cached or fetched from the cache if the `cache-control` header is not included on the request to the EM.  
 
-The alternative is to enable caching on the Microgateway by default and set the `cacheKey` property to `true`.
+The alternative is to enable caching on the Microgateway by default by setting the `cacheKey` property to `true`.
 
 ## Best Practices for configuring this plugin
 * The apikeys plugin is typically listed first in the plugin sequence.  
